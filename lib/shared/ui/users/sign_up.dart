@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qubit_sb/shared/controllers/app_controller.dart';
-import 'package:qubit_sb/shared/ui/menu/main_menu.dart';
+import 'package:qubit_sb/shared/ui/pixabay/pixabay.dart';
 import 'package:qubit_sb/shared/ui/scaffold/my_scaffold.dart';
+import 'package:qubit_sb/shared/ui/users/forms/signupform.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,22 +14,22 @@ class Home extends StatelessWidget {
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       appController.setAppBarState(
-        'Home',
-        0xe318,
+        'SignUp',
+        0xe33e,
+        false,
         true,
+        false,
+        false,
         true,
-        true,
-        true,
-        true,
-        true,
-        290 / appController.totalWidth.value,
-        0.3,
+        false,
+        0.0,
+        0.45,
       );
     });
     return MyScaffold(
-      left: MainMenu(),
-      main: Center(child: Text("Main")),
-      right: Center(child: Text("Right")),
+      left: Center(child: Text("Left")),
+      main: SignUpForm(),
+      right: Pixabay(),
       bottom: Center(child: Text("Bottom")),
     );
   }
